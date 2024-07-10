@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawsomeAdopt - Find Your Furry Friend</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+        }
+
+        .navbar-brand {
+            font-family: 'Pacifico', cursive;
+            color: bisque;
+        }
+
+        .navbar-nav .nav-link {
+            font-family: Arial, sans-serif;
+            color: bisque;
+        }
+
+        .dropdown-menu .dropdown-item {
+            font-family: Arial, sans-serif;
+            color: rgb(11, 6, 0);
+        }
+
+        .accordion-header {
+            background-color: black;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .accordion-body {
+            background-color: whitesmoke;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .accordion-button {
+            background-color: rgb(44, 43, 43);
+            color: beige;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            color: white;
+        }
+
+        .list-group-item {
+            background-color: #2e2e2e;
+            color: white;
+        }
+
+        h1 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: #f7f7f3;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PawsomeAdopt</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#carouselExampleDark">Home</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#help-section">Help</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#company-profile-section">Company Profile</a></li>
+                            <li><a class="dropdown-item" href="#founder-details-section">Founder details</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex ms-3" role="search" onsubmit="searchPets(); return false;">
+                    <input class="form-control me-2" type="search" id="searchInput" placeholder="Search by pet's name" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.hdqwalls.com/download/dog-3d-art-4k-g6-1366x768.jpg" class="d-block w-100" alt="First Slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="text-white">"Adopt Love, Unleash Joy: Find Your Furry Best Friend Today!"</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.wallpaperscraft.com/image/single/dog_pedigreed_muzzle_91866_1366x768.jpg" class="d-block w-100" alt="Second Slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="text-white">"From Shelter to Forever Home: Your Perfect Pet Awaits!"</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.hdqwalls.com/download/basset-hound-jn-1366x768.jpg" class="d-block w-100" alt="Third Slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="text-white">"Unconditional Love is Just a Paw Away: Adopt Now!"</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Search Section -->
+    <div id="search-section" class="container mt-4">
+        <h1 class="text-center">Available Furbabies for Adoption</h1>
+        <div class="row" id="petCards">
+            <div class="col-md-4 pet-card" data-name="OLLIE">
+                <div class="card mb-4">
+                    <img src="https://images.wallpaperscraft.com/image/single/rottweiler_dog_muzzle_117766_300x225.jpg" class="card-img-top" alt="Ollie">
+                    <div class="card-body">
+                        <h5 class="card-title">OLLIE</h5>
+                        <p class="card-text">Meet Ollie: Your loyal, playful, ready to bring endless joy and unwavering loyalty into your life. Ollie is eagerly awaiting a loving home!</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Age: 3</li>
+                        <li class="list-group-item">Gender: Female</li>
+                        <li class="list-group-item">Breed: Rotweiler</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Contact Owner</a>
+                        <a href="#" class="card-link">Owner's profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 pet-card" data-name="KAALU">
+                <div class="card mb-4">
+                    <img src="https://images.wallpaperscraft.com/image/single/dog_face_leaves_107737_300x225.jpg" class="card-img-top" alt="Kaalu">
+                    <div class="card-body">
+                        <h5 class="card-title">KAALU</h5>
+                        <p class="card-text">Kaalu: Your loyal, playful, and charming companion awaits to brighten your days with love and adventure!</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Age: 2</li>
+                        <li class="list-group-item">Gender: Male</li>
+                        <li class="list-group-item">Breed: Indie</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Contact Owner</a>
+                        <a href="#" class="card-link">Owner's profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 pet-card" data-name="Pari">
+                <div class="card mb-4">
+                    <img src="https://images.wallpaperscraft.com/image/single/dog_shepherd_sits_118661_300x225.jpg" class="card-img-top" alt="Pari">
+                    <div class="card-body">
+                        <h5 class="card-title">Pari</h5>
+                        <p class="card-text">Pari: A delightful bundle of joy ready to enchant your life with boundless affection and endless tail wags.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Age: 7</li>
+                        <li class="list-group-item">Gender: Female</li>
+                        <li class="list-group-item">Breed: German Shepherd</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Contact Owner</a>
+                        <a href="#" class="card-link">Owner's profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion -->
+    <div class="container my-4">
+        <div class="d-flex justify-content-end mb-3">
+            <button class="btn btn-outline-light me-2" id="expandAll">Expand All</button>
+            <button class="btn btn-outline-light" id="collapseAll">Collapse All</button>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <i class="bi bi-clipboard-check me-2"></i> Adoption Process
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p><strong>Explore:</strong> Browse available pets and find your match.</p>
+                        <p><strong>Apply:</strong> Fill out our online adoption form.</p>
+                        <p><strong>Meet:</strong> Arrange a meet-and-greet with your chosen pet.</p>
+                        <p><strong>Check:</strong> We'll conduct a home check if necessary.</p>
+                        <p><strong>Finalize:</strong> Sign adoption paperwork and pay the fee.</p>
+                        <p><strong>Welcome Home!:</strong> Take your new pet home and enjoy!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="bi bi-heart-fill me-2"></i> Donate and Support
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Make a Monetary Donation</li>
+                            <li>Volunteer Your Time</li>
+                            <li>Donate Supplies</li>
+                            <li>Participate in Sponsorship Programs</li>
+                            <li>Support Fundraising Events</li>
+                            <li>Consider Legacy Giving</li>
+                            <li>Explore Corporate Partnerships</li>
+                        </ul>
+                        <p>Thank you for supporting our mission to provide care and find loving homes for animals in need!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <i class="bi bi-question-circle-fill me-2"></i> FAQs
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p><strong>Q: How do I adopt a pet?</strong></p>
+                        <p>A: Follow the adoption process outlined above. Start by browsing our available pets and submit an adoption form.</p>
+                        <p><strong>Q: What are the adoption fees?</strong></p>
+                        <p>A: Adoption fees vary based on the pet and cover vaccinations, spaying/neutering, and other care costs.</p>
+                        <p><strong>Q: Can I volunteer even if I can't adopt?</strong></p>
+                        <p>A: Absolutely! We welcome volunteers to help with various tasks. Please see our volunteer section for more details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center text-lg-start py-4">
+        <div class="container p-4">
+            <div class="row">
+                <!-- About Us -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">About Us</h5>
+                    <p>PawsomeAdopt is dedicated to connecting loving homes with pets in need. We strive to provide the best care and support for both the animals and their new families.</p>
+                </div>
+                <!-- Contact -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="bi bi-geo-alt-fill"></i> 1234 Pet Street, Pet City, PC 12345
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope-fill"></i> info@pawsomeadopt.com
+                        </li>
+                        <li>
+                            <i class="bi bi-phone-fill"></i>743923221
+                        </li>
+                    </ul>
+                    <!-- Social Media Links -->
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-4">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="text-white me-4">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white me-4">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white
+                        ">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        &copy; 2024 PawsomeAdopt. All Rights Reserved. Designed by js.
+    </div>
+</footer>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- Custom JavaScript for Search Functionality -->
+<script>
+    // Function to filter pet cards based on search input
+    function filterPets() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const petCards = document.querySelectorAll('.pet-card');
+        
+        petCards.forEach(card => {
+            const petName = card.getAttribute('data-name').toLowerCase();
+            if (petName.includes(searchInput)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Event listener for search button click
+    document.getElementById('searchBtn').addEventListener('click', filterPets);
+
+    // Event listener for search input enter key press
+    document.getElementById('searchInput').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            filterPets();
+        }
+    });
+</script>
+</body>
+</html>
+
